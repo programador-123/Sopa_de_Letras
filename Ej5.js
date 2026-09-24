@@ -7,14 +7,9 @@
 // 5. El año no es un año bisiesto (tiene 365 días).
 let ano = parseInt(prompt("Diga el año en el que se encuentra: "));
 let dias = 365;
-if (ano%4 == 0) {
-    console.log("Es un año bisiesto");
-    if (ano%100 == 0) {
-        console.log("Es un año bisiesto");
-        if (ano%400 == 0) {
-            console.log("Es un año bisiesto");
-        }
-    } else {
-        console.log("No es un año bisiesto");
-    }
+if (ano%4 == 0 || ano%100 == 0 || ano%400 == 0) {
+    dias = 366;
+    console.log("Es un año bisiesto y por tanto tiene " + dias + " dias");
+} else {
+    console.log("No es un año bisiesto");
 }
