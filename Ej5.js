@@ -13,3 +13,12 @@ if (ano%4 == 0 || ano%100 == 0 || ano%400 == 0) {
 } else {
     console.log("No es un año bisiesto");
 }
+if (ano%4== 0) {
+    if (ano%100 == 0) {
+        if (ano%400 == 0) {
+            console.log("El año es bisiesto");
+        }
+    }else {
+        console.log("El año no es bisiesto");
+    }
+}

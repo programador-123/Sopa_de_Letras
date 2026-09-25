@@ -1,10 +1,11 @@
 // Transformar un bucle while en un bucle for. 
-let nota = parseInt(prompt("Escriba su nota: "));
-console.log("Dale a -1 para terminar.");
-while (nota >= 0 && nota <= 10) {
-    if (nota >= 5) {
-        console.log("Estas aprobado");
-    } else {
-        console.log("Estas suspenso");
-    }
+let i = 1;
+let num = prompt("Diga de que numero quiere saber la tabla de multiplicar: ");
+while (i <= 10) {
+    console.log(num + " x " + i + ": " + (num * i));
+    i++;
+}
+
+for (let j=1; j <= 10; j++) {
+    console.log(num + " x " + j + ": " + (num * j));
 }
