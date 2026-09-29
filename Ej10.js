@@ -6,23 +6,23 @@ while (eleccion !== "salir") {
     let num2 = parseInt(prompt("Diga el el primer numero 2: "));
     switch (eleccion) {
         case "S":
-            alert("La suma da como resultado: " + (num1 + num2));
+            console.log("La suma da como resultado: " + (num1 + num2));
         break;
 
         case "R":
-            alert("La resta da como resultado: " + (num1 - num2));
+            console.log("La resta da como resultado: " + (num1 - num2));
         break;
 
         case "M":
-            alert("La multiplicacion da como resultado: " + (num1 * num2));
+            console.log("La multiplicacion da como resultado: " + (num1 * num2));
         break;
 
         case "D":
-            alert("La division da como resultado: " + (num1 / num2));
+            console.log("La division da como resultado: " + (num1 / num2));
         break;
 
         default:
-            alert("Seleccione una operacion.");
+            console.log("Seleccione una operacion.");
         break;
     }
     eleccion = prompt("Pulse operacion para continuar S/R/M/D o diga salir");

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdadero o Falso</title>
+    <style>
+        body {
+            background-color: rgb(209, 188, 96);
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Solucion</h1>
+    <br>
+    <p>Piensa bien en las respuestas a cada pregunta, pues una vez hagas clic en verdadero o falso no podras volver a responder</p>
+    <br>
+    <p>En Andalucía hace mucho calor en verano</p>
+    <button id="vanda" onclick="cont++; verdadero++">Verdadero</button><button id="fanda" onclick="cont++; falso++">Falso</button>
+    <br>
+    <br>
+    <p>El Barça tiene mas Copas de Europa que el Real Madrid</p>
+    <button id="fbarca" onclick="cont++; falso++">Verdadero</button><button id="vbarca" onclick="cont++; verdadero++;">Falso</button>
+    <br>
+    <br>
+    <p>Este ejercicio esta usando JavaScript</p>
+    <button id="vjava" onclick="cont++; verdadero++">Verdadero</button><button id="fjava" onclick="cont++; falso++">Falso</button>
+    <br>
+    <br>
+    <button onclick="if (cont != 3) {
+                        alert('El numero de respuestas marcadas son: ' + cont + '. Debe responder todas para poder enviar');
+                    } else {
+                        alert('El numero de aciertos de: ' + verdadero);
+                        verdadero = 0;
+                        falso = 0;
+                        let res = window.confirm('Haga clic en Aceptar para ver los resultados de sus test o pulse Cancelar para ver las soluciones'); 
+                        cont = 0;
+                    }">Enviar</button>
+    <button onclick="location.reload()">Reiniciar</button>
+    <script src="VoF.js"></script>
+</body>
+</html>
