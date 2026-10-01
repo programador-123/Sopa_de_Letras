@@ -16,19 +16,27 @@
     <p>Piensa bien en las respuestas a cada pregunta, pues una vez hagas clic en verdadero o falso no podras volver a responder</p>
     <br>
     <p>En Andalucía hace mucho calor en verano</p>
-    <button id="vanda" onclick="cont++; verdadero++">Verdadero</button><button id="fanda" onclick="cont++; falso++">Falso</button>
+    <button class="andalucia" onclick="cont++; verdadero++">Verdadero</button><button class="andalucia" onclick="cont++; falso++">Falso</button>
     <br>
     <br>
     <p>El Barça tiene mas Copas de Europa que el Real Madrid</p>
-    <button id="fbarca" onclick="cont++; falso++">Verdadero</button><button id="vbarca" onclick="cont++; verdadero++;">Falso</button>
+    <button class="barca" onclick="cont++; falso++">Verdadero</button><button class="barca" onclick="cont++; verdadero++;">Falso</button>
     <br>
     <br>
     <p>Este ejercicio esta usando JavaScript</p>
-    <button id="vjava" onclick="cont++; verdadero++">Verdadero</button><button id="fjava" onclick="cont++; falso++">Falso</button>
+    <button class="java" onclick="cont++; verdadero++">Verdadero</button><button class="java" onclick="cont++; falso++">Falso</button>
     <br>
     <br>
-    <button onclick="if (cont != 3) {
+    <button onclick="if (cont < 3) {
                         alert('El numero de respuestas marcadas son: ' + cont + '. Debe responder todas para poder enviar');
+                        verdadero=0;
+                        falso=0;
+                        cont=0;
+                    } else if (cont > 3) { 
+                        alert('Te has pasado de la raya repitelo anda');
+                        verdadero=0;
+                        falso=0;
+                        cont=0;
                     } else {
                         alert('El numero de aciertos de: ' + verdadero);
                         verdadero = 0;
