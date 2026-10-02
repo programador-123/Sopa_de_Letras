@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verdadero o Falso</title>
-    <style>
-        body {
-            background-color: rgb(209, 188, 96);
-        }
-    </style>
+    <title>Test</title>
+    <link rel="stylesheet" href="VoF.css">
 </head>
 <body>
     <h1>Test Solucion</h1>
     <br>
     <p>Piensa bien en las respuestas a cada pregunta, pues una vez hagas clic en verdadero o falso no podras volver a responder</p>
     <br>
-    <p>En Andalucía hace mucho calor en verano</p>
-    <button class="andalucia" onclick="cont++; verdadero++">Verdadero</button><button class="andalucia" onclick="cont++; falso++">Falso</button>
+    <p id="andalucia">En Andalucía hace mucho calor en verano</p>
+    <button id="verdadero-andalucia" class="andalucia, verdadero" onclick="cont++; verdadero++">Verdadero</button>
+    <button id="falso-andalucia" class="andalucia, falso" onclick="cont++; falso++">Falso</button>
     <br>
     <br>
-    <p>El Barça tiene mas Copas de Europa que el Real Madrid</p>
-    <button class="barca" onclick="cont++; falso++">Verdadero</button><button class="barca" onclick="cont++; verdadero++;">Falso</button>
+    <p id="barca">El Barça tiene mas Copas de Europa que el Real Madrid</p>
+    <button id="verdadero-barca" class="barca, verdadero" onclick="cont++; verdadero++">Verdadero</button>
+    <button id="falso-barca" class="barca, falso" onclick="cont++; falso++">Falso</button>
     <br>
     <br>
-    <p>Este ejercicio esta usando JavaScript</p>
-    <button class="java" onclick="cont++; verdadero++">Verdadero</button><button class="java" onclick="cont++; falso++">Falso</button>
+    <p id="java">Este ejercicio esta usando JavaScript</p>
+    <button id="verdadero-java" class="java, verdadero" onclick="cont++; verdadero++">Verdadero</button>
+    <button id="falso-java" class="java, falso" onclick="cont++; falso++">Falso</button>
     <br>
     <br>
     <button onclick="if (cont < 3) {
