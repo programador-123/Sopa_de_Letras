@@ -1,18 +1,7 @@
 body {
     background-color: rgb(209, 188, 96);
 }
-button:checked {
-    display: none;
-}
 
-#verdadero-andalucia:click, #falso-andalucia:click {
-    display: none;
-}
-
-#verdadero-barca:click, #falso-barca:click{
-    display: none;
-}
-
-#verdadero-java:click, #falso-java:click {
+.oculto {
     display: none;
 }
