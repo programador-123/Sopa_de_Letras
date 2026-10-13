@@ -40,28 +40,6 @@ function inicializarTabla() {
     dibujarTabla();
 }
 
-/*
-    dibujarTabla() lo que va a hacer va a ser con la variable cadena coger
-    valores a introducir en cada parte de la tabla por ejemplo los que aun no
-    han sido definidos seguiran con ? y las partes que si que es una vez 
-    se haya intoducido las palabras se le cambiara el valor 
-*/
-function dibujarTabla() {
-    let cadena = '<table>';
-    for (let  fila = 0;  fila < tabla.length;  fila++) {
-        cadena += '<tr>';
-        for (let columna = 0; columna < tabla[fila].length; columna++) {
-            if (tabla[fila][columna] !== null) {
-                cadena += '<td>' + tabla[fila][columna] + '</td>';
-            } else {
-                cadena += '<td>?</td>';
-            }
-        }
-        cadena += '</tr>';
-    }
-    cadena += '</table>';
-    document.getElementById('tabla').innerHTML = cadena;
-}
 /*function introducirPalabra() {
     alert('Introducir palabra');
     for (let i = 0; i < tabla.length; i++) {
@@ -108,22 +86,24 @@ function intoducir() {
             let fila;
             let palabra = prompt(`Introduce una palabra de 1 a ${columnas} caracteres:`);
             if (palabra === null || palabra.trim() === '' || palabra.length > columnas) {
+                // Hacemos la comprobacion de la columna
                 do {
                     columna = parseInt(prompt('Introduce una columna entre 1 y ' + tabla[i].length + ' para la fila ' + (i + 1) + ':'));
                     if (isNaN(columna) || columna < 1 || columna > tabla[i].length) {
                         alert('Numero de columna no valido');
                     }
                 } while (isNaN(columna) || columna < 1 || columna > tabla[i].length);
-
+                // Hacemos la comprobacion de la fila
                 do {
                     fila = parseInt(prompt('Introduce una fila entre 1 y ' + tabla.length + ' para la columna ' + columna + ':'));
                     if (isNaN(fila) || fila < 1 || fila > tabla.length) {
                         alert('Numero de columna no valido');
                     }
                 } while (isNaN(fila) || fila < 1 || fila > tabla.length);
+            } else {
+                tabla[fila - 1][columna - 1] = palabra;
+                document.getElementById('tabla').innerHTML = palabra;
             }
-            tabla[fila - 1][columna - 1] = palabra;
-            dibujarTabla();
         }
     }
 }
@@ -132,18 +112,18 @@ function intoducir() {
     Hay que aleatorizar los carecteres sobrantes
     En pocas palabras sustituir los ? por una letra aleatoria
 */ 
-    function aleatorizar() {
-        const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        for (let i = 0; i < tabla.length; i++) {
-            for (let j = 0; j < tabla[i].length; j++) {
-                if (tabla[i][j] === null) {
-                    const letraAleatoria = letras.charAt(Math.floor(Math.random() * letras.length));
-                    tabla[i][j] = letraAleatoria;
-                }
+function aleatorizar() {
+    const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    for (let i = 0; i < tabla.length; i++) {
+        for (let j = 0; j < tabla[i].length; j++) {
+            if (tabla[i][j] === null) {
+                const letraAleatoria = letras.charAt(Math.floor(Math.random() * letras.length));
+                tabla[i][j] = letraAleatoria;
             }
         }
-        dibujarTabla();
     }
+    dibujarTabla();
+}
 
 /*
     Hay que hacer que cuando esten selecionas la palabra a comprobar
@@ -151,3 +131,26 @@ function intoducir() {
     palabras que tienes
 */
 function comprobar() {}
+
+/*
+    dibujarTabla() lo que va a hacer va a ser con la variable cadena coger
+    valores a introducir en cada parte de la tabla por ejemplo los que aun no
+    han sido definidos seguiran con ? y las partes que si que es una vez 
+    se haya intoducido las palabras se le cambiara el valor 
+*/
+function dibujarTabla() {
+    let cadena = '<table>';
+    for (let  fila = 0;  fila < tabla.length;  fila++) {
+        cadena += '<tr>';
+        for (let columna = 0; columna < tabla[fila].length; columna++) {
+            if (tabla[fila][columna] !== null) {
+                cadena += '<td>' + tabla[fila][columna] + '</td>';
+            } else {
+                cadena += '<td>?</td>';
+            }
+        }
+        cadena += '</tr>';
+    }
+    cadena += '</table>';
+    document.getElementById('tabla').innerHTML = cadena;
+}
