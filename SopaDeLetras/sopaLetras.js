@@ -126,4 +126,28 @@ function intoducir() {
             dibujarTabla();
         }
     }
-}   
+}
+
+/* 
+    Hay que aleatorizar los carecteres sobrantes
+    En pocas palabras sustituir los ? por una letra aleatoria
+*/ 
+    function aleatorizar() {
+        const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        for (let i = 0; i < tabla.length; i++) {
+            for (let j = 0; j < tabla[i].length; j++) {
+                if (tabla[i][j] === null) {
+                    const letraAleatoria = letras.charAt(Math.floor(Math.random() * letras.length));
+                    tabla[i][j] = letraAleatoria;
+                }
+            }
+        }
+        dibujarTabla();
+    }
+
+/*
+    Hay que hacer que cuando esten selecionas la palabra a comprobar
+    junte todos los caracteres y compruebes si es una de las
+    palabras que tienes
+*/
+function comprobar() {}
